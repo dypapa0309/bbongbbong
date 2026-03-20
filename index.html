@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>30초 비행기 총알 피하기</title>
+  <meta name="description" content="30초 동안 총알을 피하는 고난도 생존 미니게임" />
+  <meta property="og:title" content="30초 비행기 총알 피하기" />
+  <meta property="og:description" content="친구 기록을 이겨봐. 30초 동안 살아남을 수 있을까?" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="hud">
+    <div class="badge">남은 시간 <span id="time">30.0</span>s</div>
+    <div class="badge">난이도 <span id="level">1</span></div>
+    <div class="badge">점수 <span id="score">0</span></div>
+    <div class="badge">최고 기록 <span id="best">0</span></div>
+    <button class="sound-toggle" id="soundToggle" type="button">사운드 ON</button>
+  </div>
+
+  <aside class="ad ad-left">
+    <div class="ad-box">
+      광고 영역<br />
+      애드센스 좌측 배너
+    </div>
+  </aside>
+
+  <aside class="ad ad-right">
+    <div class="ad-box">
+      광고 영역<br />
+      애드센스 우측 배너
+    </div>
+  </aside>
+
+  <main class="game-wrap">
+    <div class="challenge-banner" id="challengeBanner" hidden></div>
+    <canvas id="game"></canvas>
+
+    <div class="bottom-ad">
+      <div class="ad-box horizontal">광고 영역 · 하단 배너</div>
+    </div>
+
+    <div class="joystick-wrap" id="joystickWrap" aria-hidden="true">
+      <div class="joystick-base" id="joystickBase">
+        <div class="joystick-knob" id="joystickKnob"></div>
+      </div>
+    </div>
+  </main>
+
+  <section class="overlay" id="startPanel">
+    <div class="card">
+      <p class="eyebrow">FLASH STYLE SURVIVAL</p>
+      <h1>30초 비행기 총알 피하기</h1>
+      <p class="desc">
+        예전 플래시 감성의 탄막 생존 게임.<br />
+        30초만 버티면 승리.<br />
+        시간이 갈수록 총알이 더 많아지고 더 빨라진다.<br />
+        20초 이후엔 보스 패턴도 나온다.
+      </p>
+
+      <div class="guide-grid">
+        <div class="guide-item">
+          <strong>PC 조작</strong>
+          <span>방향키 / WASD</span>
+        </div>
+        <div class="guide-item">
+          <strong>모바일 조작</strong>
+          <span>왼쪽 아래 조이스틱 드래그</span>
+        </div>
+        <div class="guide-item">
+          <strong>바이럴</strong>
+          <span>점수 공유 / 친구 도전 링크</span>
+        </div>
+        <div class="guide-item">
+          <strong>광고 구조</strong>
+          <span>시작 / 결과 / 좌우 / 하단</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="btn primary" id="startBtn" type="button">게임 시작</button>
+        <button class="btn ghost" id="copyChallengeBtn" type="button">친구에게 도전 링크 복사</button>
+      </div>
+
+      <div class="result-ad">
+        <div class="ad-box horizontal">광고 영역 · 시작 패널 하단</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="overlay" id="endPanel" hidden>
+    <div class="card">
+      <p class="eyebrow">RESULT</p>
+      <h2 id="endTitle">게임 종료</h2>
+      <p class="desc" id="endDesc"></p>
+
+      <div class="share-box" id="sharePreview"></div>
+
+      <div class="buttons">
+        <button class="btn primary" id="restartBtn" type="button">다시 하기</button>
+        <button class="btn ghost" id="shareBtn" type="button">점수 공유하기</button>
+        <button class="btn ghost" id="copyResultBtn" type="button">결과 링크 복사</button>
+      </div>
+
+      <div class="result-ad">
+        <div class="ad-box horizontal">광고 영역 · 결과 패널 하단</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
